@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deactivation form</title>
+    <style> 
+        body{
+            margin-right: 40%;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">Deactivation Form</h1>
+    <form action="">
+        <fieldset>
+            <legend><b>Details</b></legend><br>
+            <label for="name">Full Name</label>
+            <input type="text"><br>
+            <label for="username">Username</label>
+            <input type="text"><br>
+            <label for="email">E-mail</label>
+            <input type="email"><br>
+            <p><b><u>Reason for deactivation</u></b></p>
+            <input type="checkbox" name="reasons">
+            <label for="reason">Privacy concerns</label><br>
+            <input type="checkbox" name="reasons">
+            <label for="reason">Too much time spent on social media</label><br>
+            <input type="checkbox" name="reasons">
+            <label for="reason">Not satisfied with the service</label><br>
+            <input type="checkbox" name="reasons">
+            <label for="reason">Prefer other platforms</label><br>
+            <input type="checkbox" name="reasons">
+            <label for="reason">nothing</label>
+
+            <p><b><u>preference</u></b></p>
+            <input type="radio" name="deactivation" id="temporary">
+            <label for="temporary">Temporarily deactivate</label><br>
+            <input type="radio" name="deactivation" id="permanent">
+            <label for="permanent">Permanently delete</label><br>
+
+            <b><label for="password">Re-enter password</label></b>
+            <input type="password">
+            <p><b>Proceed with deactivation</b></p>
+            <input type="radio" id="delete" name="reason">
+            <label for="delete">Yes</label><br>
+            <input type="radio" id="delete" name="reason">
+            <label for="delete">No</label><br>
+            <input type="submit">
+            
+        
+        </fieldset>
+    </form>
+    
+</body>
+</html>
