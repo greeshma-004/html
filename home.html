@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Blog</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .navbar ul {
+            list-style: none;
+            text-align: left;
+            width: 100%;
+            padding-left: 100px;
+            background-color: rgb(78, 143, 145);
+            height: 45px;
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar ul li {
+            display: inline-block;
+            margin: 10px 11px;
+        }
+
+        .navbar ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .navbar-right {
+            margin-left: 45%;
+        }
+
+        .navbar-right img {
+            height: 20px;
+            width: 20px;
+            display: inline-block;
+            margin-left: 10px;
+            filter: invert(100%);
+        }
+
+        .h-primary {
+            text-align: center;
+            margin: 34px 0px 0px 0px;
+            font-size: 45px;
+            font-family: "Dancing Script", cursive;
+            font-optical-sizing: auto;
+            font-weight: weight;
+            font-style: normal;
+        }
+
+        .caption {
+            display: block;
+            font-size: 1em;
+            color: #0c0c0c;
+            text-align: center;
+            margin-top: 8px;
+            font-style: italic;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            margin: 2rem 0;
+
+        }
+
+        .nav-links button {
+            margin: -40px 20px;
+        }
+
+        .dropdown {
+            position: relative;
+            padding: 0 20px;
+        }
+
+        .dropdown button {
+            background: none;
+            border: none;
+            color: #333;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            min-width: 90px;
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .home {
+            background-image: url('https://static.vecteezy.com/system/resources/previews/030/601/911/non_2x/beautiful-views-of-green-hills-generative-ai-free-photo.jpg');
+            height: 600px;
+            background-size: cover;
+            background-position: bottom;
+        }
+
+        .heading1 {
+            text-align: center;
+            font-size: 5em;
+            padding-top: 240px;
+            color: white;
+        }
+
+        .heading2 {
+            text-align: center;
+            font-size: 3em;
+            margin-top: 30px;
+        }
+
+        .container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .bottom-left {
+            position: absolute;
+            bottom: 8px;
+            left: 50px;
+            color: white;
+            font-size: 2em;
+        }
+
+        .destination {
+            height: 450px;
+            width: 300px;
+            margin-left: 36px;
+            margin-top: 28px;
+        }
+
+        .roadtrips {
+            height: 450px;
+            width: 300px;
+            margin-left: 36px;
+            margin-top: 28px;
+        }
+
+        .hiking {
+            height: 450px;
+            width: 300px;
+            margin-left: 36px;
+            margin-top: 28px;
+        }
+
+        .photography {
+            height: 450px;
+            width: 300px;
+            margin-left: 36px;
+            margin-top: 28px;
+        }
+
+        .heading5 {
+            font-size: 6em;
+            margin: 0% 3%;
+            color: rgb(78, 143, 145);
+        }
+
+        .image1 {
+            display: flex;
+            margin: 9% 0%;
+        }
+
+        .image1 img {
+            margin-right: 5%;
+            margin-left: 8%;
+            border-radius: 3%;
+        }
+
+        .text {
+            border-left: 5px solid #009688;
+            padding-left: 10px;
+            font-size: 1.4em;
+            margin: 7% 7%;
+            font-style: italic;
+        }
+
+        .text-container {
+            display: flex;
+            flex-direction: column;
+            margin-left: 5%;
+        }
+
+        .footer {
+            background-color: #1a1a1a;
+            color: #e0e0e0;
+            padding: 40px 0;
+        }
+
+        .section {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .heading4 {
+            color: #f9b233;
+            font-size: 24px;
+        }
+
+        .container2 {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 20px;
+        }
+
+        .b-icons img {
+            display: inline-block;
+            filter: invert(100%);
+            height: 25px;
+            width: 25px;
+            margin: 35px 15px;
+        }
+
+        .heading3 {
+            font-size: 3em;
+            font-weight: bold;
+            margin-left: 3%;
+            margin-bottom: 2%;
+        }
+
+        .image-section {
+            border-radius: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .container1 {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid whitesmoke;
+            height: 420px;
+            width: 32%;
+            margin: 10px 0;
+        }
+
+        .container1 img {
+            height: 310px;
+            width: 400px;
+            margin: 26px 30px;
+            border-radius: 10px;
+            margin: 5% 4%;
+
+        }
+
+        #b1 {
+            height: 35px;
+            width: 100px;
+            border-radius: 10px;
+            font-size: medium;
+            margin: 20px 0px;
+            font-weight: bold;
+            margin-left: 38%;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="./Home.html">HOME</a></li>
+            <li><a href="#">ABOUT</a></li>
+            <li><a href="#">DESTINATIONS</a></li>
+            <li><a href="./gallery.html">GALLERY</a></li>
+            <li><a href="./Contact_us.html">CONTACT</a></li>
+            <div class="navbar-right">
+                <img src="https://cdn-icons-png.flaticon.com/128/1384/1384031.png" alt="Instagram">
+                <img src="https://cdn-icons-png.flaticon.com/128/733/733635.png" alt="Twitter">
+                <img src="https://cdn-icons-png.flaticon.com/128/20/20837.png" alt="Facebook">
+                <img src="https://cdn-icons-png.flaticon.com/128/1384/1384028.png" alt="Youtube">
+            </div>
+        </ul>
+    </nav>
+    <section>
+        <h1 class="h-primary">
+            Carnets de Voyage
+        </h1>
+        <span class="caption">Travel Explore Enjoy</span>
+        <nav class="nav-links">
+            <div class="dropdown">
+                <button>AFRICA</button>
+                <div class="dropdown-content">
+                    <a href="#">Tanzania</a>
+                    <a href="#">Botswana</a>
+                    <a href="#">Namibia</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button>AMERICA</button>
+                <div class="dropdown-content">
+                    <a href="#">USA</a>
+                    <a href="#">Canada</a>
+                    <a href="#">Brazil</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button>ASIA</button>
+                <div class="dropdown-content">
+                    <a href="#">Japan</a>
+                    <a href="#">India</a>
+                    <a href="#">Thailand</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button>EUROPE</button>
+                <div class="dropdown-content">
+                    <a href="./paris.html">France</a>
+                    <a href="#">Germany</a>
+                    <a href="#">Italy</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">AUSTRALIA</button>
+                <div class="dropdown-content">
+                    <a href="#">Sydney</a>
+                    <a href="#">Melbourne</a>
+                    <a href="#">Brisbane</a>
+                </div>
+            </div>
+        </nav>
+
+    </section>
+    <section class="home">
+        <h1 class="heading1">Bon Voyage</h1>
+    </section>
+    <h1 class="heading2">EXPLORE THE WORLD FOR YOURSELF</h1>
+    <section>
+        <div class="container">
+            <a href="#">
+            <img src="https://images.pexels.com/photos/2675268/pexels-photo-2675268.jpeg?auto=compress&cs=tinysrgb&w=600"
+                alt="Destinations" class="destination">
+            <div class="bottom-left">DESTINATIONS</div>
+        </a>
+        </div>
+        <div class="container">
+            <a href="#">
+            <img src="https://media.istockphoto.com/id/2160422184/photo/car-driving-on-a-misty-country-road-in-the-netherlands.jpg?s=612x612&w=0&k=20&c=9YHLnrmZNQWdDTYwBzH2zF7PIf13tKfhbR-tjj5KHo4="
+                alt="Road trips" class="roadtrips">
+            <div class="bottom-left">ROAD TRIPS</div>
+        </a>
+        </div>
+        <div class="container">
+            <a href="#">
+            <img src="https://media.istockphoto.com/id/2156952374/photo/a-female-mountaineer-ascends-the-alps-with-backcountry-gear.jpg?s=612x612&w=0&k=20&c=4VXfHP-SdO_p7T2rB4ukSUFDp0I-PKUST9HLid_ZNvc="
+                alt="hiking" class="hiking">
+            <div class="bottom-left">HIKING</div>
+        </a>
+        </div>
+        <div class="container">
+            <a href="#">
+            <img src="https://media.istockphoto.com/id/509641937/photo/pink-lotus.jpg?s=612x612&w=0&k=20&c=3fP1ZjTgaVmP2WAXxUJJYg7TVfOE--u1oF1XkfcEES8="
+                alt="photography" class="photography">
+            <div class="bottom-left">PHOTOGRAPHY</div>
+        </a>
+        </div>
+    </section>
+    <div class="image1">
+        <div class="text-container">
+            <h2 class="heading5">DARE<br> TO <br>EXPLORE</h2>
+            <p class="text">An exotic tropical destination that flaunts scenic beaches and mountains, Bali is
+                deep-rooted in culture and tradition,which adds to the charm of this scenic island. </p>
+            <h2 style="font-size: 2em; margin-left: 7%; font-style: italic;">Bali Swing</h2>
+            <p style="margin: 5% 10%; font-size: 1.5em; font-style: italic;">The Bali Swing is a popular tourist attraction. It is essentially a large swing made of ropes and
+                bamboo, which is suspended high above the ground in a scenic location. Visitors can sit on the
+                swing and be pushed back and forth,
+                enjoying the views of the surrounding landscape.
+        </div>
+
+        <img src="https://www.indonesia.travel/content/dam/indtravelrevamp/en/trip-ideas/5-fun-activities-to-do-during-summer-holidays-in-bali/mobile.jpg"
+            alt="" height="800px" width="600px">
+    </div>
+    <h2 class="heading3">POPULAR DESTINATIONS</h2>
+    <div class="image-section">
+        <div class="container1">
+            <img src="https://www.citalia.com/-/media/bynder/citalia-non-geography/blogs/rome-city-guide/blog-rome-300273-2022-rome-shutterstock_1417390817-hybris.jpg?rev=6e4a0e96269a4345a799296d555a0c24&h=879&w=1905"
+                alt="image">
+            <p style="text-align: center; font-size: large; font-weight: bold;">ROME,ITALY</p>
+            <button id="b1">EXPLORE</button>
+        </div>
+        <div class="container1">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Tower_Bridge_at_Dawn.jpg/450px-Tower_Bridge_at_Dawn.jpg"
+                alt="image">
+            <p style="text-align: center; font-size: large; font-weight: bold;">LONDON,UK</p>
+           <a href="./Uk.html"> <button style="cursor: pointer;" id="b1">EXPLORE</button></a>
+        </div>
+        <div class="container1">
+            <img src="https://t4.ftcdn.net/jpg/04/12/81/69/360_F_412816969_cpRI2c2aSHobr77aOOzgO3kcW7FWCn9e.jpg"
+                alt="image">
+            <p style="text-align: center; font-size: large; font-weight: bold;">SYDNEY,AUSTRALIA</p>
+            <button id="b1">EXPLORE</button>
+        </div>
+        <div class="container1">
+            <img src="https://static.independent.co.uk/2024/01/07/11/3-4-scaled.png?quality=75&width=1368&crop=3%3A2%2Csmart&auto=webp"
+                alt="image">
+            <p style="text-align: center; font-size: large; font-weight: bold;">MALDIVES,SOUTH ASIA</p>
+            <button id="b1">EXPLORE</button>
+        </div>
+        <div class="container1">
+            <img src="https://media.istockphoto.com/id/1364380431/photo/the-eiffel-tower-from-the-river-seine-in-paris.jpg?s=612x612&w=0&k=20&c=XgeWO_B-gfuHU_fulflMN40VbhvxtTMvEEFA4tshilI="
+                alt="image">
+            <p style="text-align: center; font-size: large; font-weight: bold;">PARIS,FRANCE</p>
+           <a  href="./paris.html"></a><button style="cursor: pointer;"
+         id="b1">EXPLORE</button></a>
+        </div>
+        <div class="container1">
+            <img src="https://media.istockphoto.com/id/1488667970/photo/stunning-view-overlooking-iconic-horseshoe-falls-at-niagara-falls-from-canada-jpg.jpg?s=612x612&w=0&k=20&c=GCW2KvdQy76jEZKgqYECk6vgKpYQ8Qg6BUVG4uA23hI="
+                alt="image">
+            <p style="text-align: center; font-size: large; font-weight: bold;">NIAGARA FALLS,CANADA</p>
+            <button id="b1">EXPLORE</button>
+        </div>
+        <div class="container1">
+            <img src="https://media.gettyimages.com/id/1397446853/photo/oishino-hakkai-village-wiht-fuji-mountain-background-in-autumn-japan.jpg?s=612x612&w=0&k=20&c=SCye-w0VbdR-7W3Di3fJKpVGBXHfa3WHP4AwEPSTiHA="
+                alt="image">
+            <p style="text-align: center; font-size: large; font-weight: bold;">OSHINO HAKKAI,JAPAN</p>
+            <button id="b1">EXPLORE</button>
+        </div>
+        <div class="container1">
+            <img src="https://media.istockphoto.com/id/533998713/photo/empire-state-building-at-night.jpg?s=612x612&w=0&k=20&c=2fZCcZq3186F9R2WHZ2hEBh4dVsOX7pqgcVRXXn195I="
+                alt="image">
+            <p style="text-align: center; font-size: large; font-weight: bold;">NEWYORK,USA</p>
+            <a href="./USA.html"><button style="cursor: pointer;" id="b1">EXPLORE</button></a>
+        </div>
+        <div class="container1">
+            <img src="https://hblimg.mmtcdn.com/content/hubble/img/destimg/mmt/destination/t_trp/m_Agra_main_tv_destination_img_1_l_825_1227.jpg?im=Resize=(480,480)"
+                alt="image">
+            <p style="text-align: center; font-size: large; font-weight: bold;">TAJ MAHAL,INDIA</p>
+            <a href="./India.html"> <button style="cursor: pointer;" id="b1">EXPLORE</button></a>
+        </div>
+    </div>
+    <div>
+        <h3 style="margin-top: 7%; margin-left: 5%;">PLACES I'VE BEEN TO</h3>
+        <img src="./world.jpeg" alt="" height="500px" width="700px" style="margin-left: 25%;">
+    </div>
+
+
+    <footer class="footer">
+        <div class="section">
+           
+            <div class="container2">
+                <h3 class="heading4" style="text-align: center;">About the Blog</h3>
+                <p style="font-size: 21px; line-height: 1.6; margin:13px ;">
+                    Welcome to my travel blog, where I share my adventures, tips, and experiences from across the
+                    world.
+                    Join me on this journey of exploring hidden gems and popular destinations alike!
+                </p>
+            </div>
+
+          
+            <div class="container2">
+                <h3 class="heading4" style="margin-left: 40%;">Quick Links</h3>
+                <ul style="list-style:none; margin: 13px; font-size: 21px; margin-left: 40%;">
+                    <li><a href="#" style="color: #e0e0e0; text-decoration: none;">About</a></li>
+                    <li><a href="#" style="color: #e0e0e0; text-decoration: none;">Destinations</a></li>
+                    <li><a href="#" style="color: #e0e0e0; text-decoration: none;">Gallery</a></li>
+                    <li><a href="#" style="color: #e0e0e0; text-decoration: none;">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Social Media Section -->
+            <div class="container2">
+                <h3 class="heading4" style="margin-left: 50%;">Follow Me</h3>
+                <div class="b-icons" style="margin-left: 35%;">
+                    <a href="#"><img src="https://cdn-icons-png.flaticon.com/128/1384/1384031.png" alt="Instagram"></a>
+                    <a href="#"><img src="https://cdn-icons-png.flaticon.com/128/733/733635.png" alt="Twitter"></a>
+                    <a href="#"><img src="https://cdn-icons-png.flaticon.com/128/20/20837.png" alt="Facebook"></a>
+                    <a href="#"><img src="https://cdn-icons-png.flaticon.com/128/1384/1384028.png" alt="Youtube"></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Bottom Section -->
+        <div style="background-color: #000; padding: 20px 0; text-align: center; font-size: 18px;">
+            <p>&copy; 2024 Carnets de Voyage. All Rights Reserved.</p>
+            <p>Powered by <a href="#" style="color: #f9b233; text-decoration: none;">Carnets de Voyage</a></p>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>
